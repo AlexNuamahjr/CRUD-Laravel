@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [ClientController::class, 'index'])->name('clients.index');
-Route::get('/add', [ClientController::class, 'add'])->name('clients.add');
-Route::post('/add', [ClientController::class, 'save'])->name('clients.save');
-Route::get('/{client}/edit', [ClientController::class, 'edit'])->name('clients.edit');
-Route::put('/{client}/update', [ClientController::class, 'update'])->name('clients.update');
-Route::delete('/{client}/delete', [ClientController::class, 'destroy'])->name('clients.destroy');
+Route::get('/', [ClientController::class, 'index'])->name('pages.index');
+Route::get('/add', [ClientController::class, 'add'])->name('pages.add');
+Route::post('/add', [ClientController::class, 'save'])->name('pages.save');
+Route::get('/{client}/edit', [ClientController::class, 'edit'])->name('pages.edit');
+Route::put('/{client}/update', [ClientController::class, 'update'])->name('pages.update');
+Route::delete('/{client}/delete', [ClientController::class, 'destroy'])->name('pages.destroy');

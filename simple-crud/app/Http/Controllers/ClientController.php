@@ -10,11 +10,11 @@ class ClientController extends Controller
     //
     public function index (){
         $clients = Client::all();
-        return view('clients.index', ['clients' => $clients]);
+        return view('pages.index', ['clients' => $clients]);
     }
 
     public function add (){
-        return view('clients.add');
+        return view('pages.add');
     }
 
     public function save (Request $request){
@@ -28,11 +28,11 @@ class ClientController extends Controller
 
         // Saving clients into database
         $newClient = Client::create($data);
-        return redirect(route('clients.index'));  
+        return redirect(route('pages.index'));  
     }
 
     public function edit (Client $client){
-        return view('clients.update', ['client' => $client]);
+        return view('pages.update', ['client' => $client]);
         // dd($client);
     }
 
@@ -45,11 +45,11 @@ class ClientController extends Controller
         ]);
 
         $client->update($data);
-        return redirect(route('clients.index'))->with('success', 'Client updated successfully');
+        return redirect(route('pages.index'))->with('success', 'Client updated successfully');
     }
 
     public function destroy (Client $client){
         $client->delete();
-        return redirect(route('clients.index'))->with('success', 'Client deleted successfully');
+        return redirect(route('pages.index'))->with('success', 'Client deleted successfully');
     }
 }
