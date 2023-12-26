@@ -29,6 +29,13 @@
                     <td>{{$client->user_name}}</td>
                     <td>{{$client->age}}</td>
                     <td><a href="{{route('clients.edit', ['client' => $client])}}" class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Edit</a></td>
+                    <td>
+                        <form method="POST" action="{{route('clients.destroy', ['client' => $client])}}">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </table>

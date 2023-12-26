@@ -47,4 +47,9 @@ class ClientController extends Controller
         $client->update($data);
         return redirect(route('clients.index'))->with('success', 'Client updated successfully');
     }
+
+    public function destroy (Client $client){
+        $client->delete();
+        return redirect(route('clients.index'))->with('success', 'Client deleted successfully');
+    }
 }
