@@ -39,7 +39,10 @@
             <div class="col">
               <input type="text" class="form-control" placeholder="Age" name="age">
             </div>
-        </div>
+          </div>
+          <div class="m-2">
+            <button type="submit" class="btn btn-primary m-4">Add</button>
+          </div>
         
     </form>
 </body>

@@ -21,9 +21,9 @@
             
         @endif
     </div>
-    <form method="POST" action="">
+    <form method="POST" action="{{route('clients.update', ['client' => $client])}}">
         @csrf
-        @method('POST')
+        @method('PUT')
         <div class="row g-3 m-2">
             <div class="col">
               <input type="text" class="form-control" placeholder="First name" aria-label="First name" name="first_name" value="{{$client->first_name}}">
@@ -40,7 +40,9 @@
               <input type="text" class="form-control" placeholder="Age" name="age" value="{{$client->age}}">
             </div>
         </div>
-        
+        <div class="m-2">
+            <button type="submit" class="btn btn-primary m-4">Update</button>
+          </div>
     </form>
 </body>
 </html>

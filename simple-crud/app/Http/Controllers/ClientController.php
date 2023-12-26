@@ -35,4 +35,16 @@ class ClientController extends Controller
         return view('clients.update', ['client' => $client]);
         // dd($client);
     }
+
+    public function update (Client $client, Request $request){
+        $data = $request->validate([
+            'first_name' => 'required',
+            'lastname' => 'required',
+            'user_name' => 'required',
+            'age' => 'required|numeric',
+        ]);
+
+        $client->update($data);
+        return redirect(route('clients.index'))->with('success', 'Client updated successfully');
+    }
 }
